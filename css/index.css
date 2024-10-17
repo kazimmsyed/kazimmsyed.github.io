@@ -1,0 +1,26 @@
+@import url("parentdiv.css");
+
+#profile_pic{
+    width:100px;
+    height:100px;
+}
+
+
+#oneline_info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+address{
+    display: inline;
+}
+
+.box_design{
+    display: flex;
+    justify-content: space-between;
+}
+
+.dates{
+    text-align: right;
+}

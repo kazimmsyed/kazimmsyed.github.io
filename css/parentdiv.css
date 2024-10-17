@@ -1,0 +1,30 @@
+
+body{
+    /* background-color: cyan; */
+}
+
+#parentDiv{
+    display: grid;
+    grid-template-columns:2fr 4fr;
+    grid-template-rows: 2fr 1fr;
+    grid-template-areas: "left right"
+    "left right"
+    
+}
+
+
+#sidebar{
+    grid-area: left;
+    border:2px solid pink;
+}
+
+#main_content{
+    grid-area: right;
+    border:2px solid pink;
+}
+
+#container{
+    position: sticky;
+    top:0;
+    padding:1% 1% 1% 1%;
+}
