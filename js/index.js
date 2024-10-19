@@ -65,7 +65,10 @@ $(document).ready(function(){
        
        parentDiv.addEventListener('click',(e)=>{
         console.log('clicked')
-        ham_onclick();
+        if(flag==true){
+            ham_onclick();
+        }
+        
        })
     /* end of document*/
 });
