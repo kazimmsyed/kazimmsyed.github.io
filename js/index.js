@@ -65,7 +65,7 @@ $(document).ready(function(){
        
        parentDiv.addEventListener('click',(e)=>{
         console.log('clicked')
-        if(flag==true){
+        if((flag==true) && (window.innerWidth<=800) ){
             ham_onclick();
         }
         
