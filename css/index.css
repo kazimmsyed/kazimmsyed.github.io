@@ -1,4 +1,10 @@
 @import url("parentdiv.css");
+@import url("navbar.css");
+
+:root,html,body{
+    box-sizing: border-box;
+    margin:0;
+}
 
 #profile_pic{
     width:100px;
@@ -23,4 +29,21 @@ address{
 
 .dates{
     text-align: right;
+} 
+
+#hamburger{
+    padding:5px 5px 5px 5px;
+    z-index:2;
+}
+
+#online_profiles,#coding_profiles{
+    display: flex;
+    flex-direction: column;
+}
+
+
+@media(max-width:800px){
+    #oneline_info{
+        flex-direction: column;
+    }
 }

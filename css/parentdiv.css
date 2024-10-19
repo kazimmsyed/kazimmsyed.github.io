@@ -1,9 +1,14 @@
 
 body{
-    /* background-color: cyan; */
+    background-color: white;
 }
 
 #parentDiv{
+    background-color: transparent;
+}
+
+
+.grid_parent{
     display: grid;
     grid-template-columns:2fr 4fr;
     grid-template-rows: 2fr 1fr;
@@ -11,7 +16,6 @@ body{
     "left right"
     
 }
-
 
 #sidebar{
     grid-area: left;
@@ -26,5 +30,22 @@ body{
 #container{
     position: sticky;
     top:0;
-    padding:1% 1% 1% 1%;
+    padding:2% 1% 1% 1%;
+}
+
+
+.grid_parent2{
+    display: grid;
+    grid-template-columns:1fr 20fr 1fr;
+    grid-template-areas:". right .";
+    
+}
+
+@media(max-width:800px){
+    #sidebar{
+        position: fixed;
+        width:80vw;
+        height:90vh;
+        background-color: rgb(202, 172, 172);
+    }
 }
