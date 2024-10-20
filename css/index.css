@@ -9,6 +9,9 @@
 #profile_pic{
     width:100px;
     height:100px;
+    clip-path: polygon(1% 0, 98% 0, 100% 50%, 98% 100%, 1% 100%);
+
+
 }
 
 
@@ -19,12 +22,22 @@
 }
 
 address{
-    display: inline;
+    display: inline;    
+}
+
+.title_info{
+    min-width: 10rem;
 }
 
 .box_design{
     display: flex;
     justify-content: space-between;
+    /* border:2px solid yellow;     */
+}
+
+.margin_off{
+    margin-left:2em;
+    padding-left:5px;
 }
 
 .dates{
@@ -48,3 +61,4 @@ address{
         flex-direction: column;
     }
 }
+
