@@ -23,7 +23,7 @@ $(document).ready(function(){
     
     let sm_grid=function(){
         console.log('i was ran')
-        if(window.innerWidth>801){
+        if(window.innerWidth>800){
             if(flag==false && parentDiv.classList.contains('grid_parent2')){
                 $('#sidebar').fadeIn(500);
                 flag=true;
@@ -47,7 +47,7 @@ $(document).ready(function(){
 
     /* END FUNCTIONS */
 
-    
+
     let ham_onclick=function(e){
         console.log('nav clicked');
         hideandSeek();

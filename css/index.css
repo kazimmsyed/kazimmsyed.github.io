@@ -50,11 +50,50 @@ address{
     
 }
 
-#online_profiles,#coding_profiles{
+
+#container a{
+    text-decoration: none;
+    color:white
+}
+#sidebar table th{
+    color:rgb(108, 117, 125);
+    text-transform: uppercase;
+    letter-spacing:1px;
+    background-color: #495057;
+    border-radius: 5%;
+}
+#sidebar table{
+    text-align: center;
+}
+
+#online_profiles,#coding_profiles,#project_links{
     display: flex;
     flex-direction: column;
 }
 
+.glow_dot{
+    width:5px;
+    height:5px;
+    /* background-color: rgb(119, 239, 119); */
+    border-radius: 100%;
+    display: inline-block;
+
+}
+
+.green_spark{
+    background-color: rgb(119, 239, 119);
+
+}
+
+.red_spark{
+   background-color: rgb(255, 99, 99); 
+}   
+
+
+table:hover span.glow_dot{
+    width:6px;
+    height:6px;
+}
 
 @media(max-width:800px){
     #oneline_info{
