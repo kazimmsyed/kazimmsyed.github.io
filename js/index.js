@@ -3,6 +3,8 @@ $(document).ready(function(){
     /* Initialization of variables and other setups*/
     let parentDiv=document.getElementById('parentDiv');
     let flag=true;
+    let sidebar=document.getElementById('sidebar');
+    // let main_content=document.getElementById('main_content');
 
     if(window.innerWidth<=800){
         parentDiv.classList.add('grid_parent2');
@@ -22,7 +24,7 @@ $(document).ready(function(){
     }
     
     let sm_grid=function(){
-        console.log('i was ran')
+        // console.log('i was ran')
         if(window.innerWidth>800){
             if(flag==false && parentDiv.classList.contains('grid_parent2')){
                 $('#sidebar').fadeIn(500);
@@ -49,7 +51,7 @@ $(document).ready(function(){
 
 
     let ham_onclick=function(e){
-        console.log('nav clicked');
+        // console.log('nav clicked');
         hideandSeek();
         sm_grid();
     };
@@ -69,7 +71,7 @@ $(document).ready(function(){
     
     /* Automatic closing of sidebar when screen width diminishes to small size*/
     let mediaQuery = window.matchMedia('(min-width: 801px)');
-    console.log(mediaQuery)
+    // console.log(mediaQuery)
     mediaQuery.addEventListener('change', () => {
         if (mediaQuery.matches) {
             sm_grid();
@@ -80,11 +82,17 @@ $(document).ready(function(){
 
     /* Event Listeners*/
 
+    sidebar.addEventListener('click',(e)=>{
+        console.log('sidebar clicked');
+        e.stopPropagation();
+    });
+    
     parentDiv.addEventListener('click',(e)=>{
-    console.log('clicked')
+    console.log('parentDiv clicked')
     if((flag==true) && (window.innerWidth<=800) ){
         ham_onclick();
-    }
+    };
+    
 
 })
 /* end of document*/
