@@ -1,0 +1,15 @@
+
+/*
+About maincontent extracted from parentdiv
+#main_content{
+    color:white;
+    grid-area: right;
+    z-index:-1;
+    position: relative;
+} */
+
+#main_content{
+    display: grid;
+    grid-row-gap:3rem;
+    grid-template-rows:auto;
+}
