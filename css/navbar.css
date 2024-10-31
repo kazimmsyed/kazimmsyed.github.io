@@ -8,7 +8,7 @@ nav{
     flex-direction: row-reverse;
     font-size:2rem;
     backdrop-filter: blur(14px);
-
+    align-items: baseline;
 }
 
 #nyp{
@@ -16,8 +16,19 @@ nav{
     /* color:var(--clr-dark2); */
     color:white;
     letter-spacing:5px;
+    font-size:2rem;
 }
 
 #nav_parent{
     height:2.5rem;
 }
+
+
+
+@media(max-width:400px){
+    #nyp{
+        font-size:1.1rem;
+        transition:font-size 100ms ease-in;
+    }
+}
+
