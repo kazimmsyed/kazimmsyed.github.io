@@ -11,6 +11,12 @@ nav{
 
 }
 
+#nyp{
+    margin-right:5%;
+    /* color:var(--clr-dark2); */
+    color:white;
+    letter-spacing:5px;
+}
 
 #nav_parent{
     height:2.5rem;

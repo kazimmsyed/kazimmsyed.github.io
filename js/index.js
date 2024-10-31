@@ -1,9 +1,14 @@
 console.log("index.js  1connected")
+
 $(document).ready(function(){
     /* Initialization of variables and other setups*/
     let parentDiv=document.getElementById('parentDiv');
     let flag=true;
     let sidebar=document.getElementById('sidebar');
+
+    //nyp
+    nav=document.getElementById('nav_parent');
+    
     // let main_content=document.getElementById('main_content');
 
     if(window.innerWidth<=800){
@@ -95,9 +100,59 @@ $(document).ready(function(){
     
 
 })
+
+
+window.addEventListener('scroll', (e) => {
+//   const rect = header.getBoundingClientRect();
+hr_lines=document.querySelectorAll('hr',e.clientY);
+
+console.log('heyyyy')
+    op=getTheClosest();
+    console.log(op);
+    if(op.element.innerText!=undefined){
+        debugger;
+        nyp.innerText=op.element.innerText;
+
+    }
+    else{
+        nyp.innerText="";
+    }
+//   if (rect.top < 0) {
+//     navbarTitle.textContent = header.textContent;
+//   } else {
+//     navbarTitle.textContent = '';
+//   }
+});
 /* end of document*/
 
 
     
     
 });
+
+
+let getTheClosest=function(y){
+    nav_box=nav.getBoundingClientRect()
+    // console.log(nav_box,nav_box.bottom);
+
+    hr_lines=document.querySelectorAll('#main_content h3');
+    // console.log('----');
+    op=[...hr_lines].reduce((acc,val)=>{
+        val_box=val.getBoundingClientRect();
+
+
+
+        offset=val_box.bottom;
+        console.log(offset,val)
+        if(offset<50 && offset>acc.offset){
+            return {"offset":offset,"element":val}
+        }
+        else{
+            return acc;
+        }
+
+    },{"offset":Number.NEGATIVE_INFINITY,"element":-1})
+    return op;
+}
+
+

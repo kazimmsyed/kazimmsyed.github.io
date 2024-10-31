@@ -50,12 +50,13 @@ body{
     background-position:top 80% left 40%; */
     /* border:2px solid white; */
     box-sizing: border-box;
+    z-index:1;
+
 }
 
 #main_content{
     color:white;
     grid-area: right;
-    z-index:-1;
     position: relative;
 }
 
@@ -101,8 +102,8 @@ body{
 #container{
     position: sticky;
     top:2rem;
-    background-color: var(--clr-dark3);
-     background-image: url('https://images.pexels.com/photos/3230019/pexels-photo-3230019.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+    background-color: var(--clr-dark);
+     background-image: url('../images/water_pixels.jpg');
     background-size: cover; 
     background-position:20% 100%;
     /* border:2px solid yellow; */
@@ -112,6 +113,7 @@ body{
     display:flex;
     flex-direction: column;
     justify-content: flex-start;
+
 }
 
 #main_content hr{

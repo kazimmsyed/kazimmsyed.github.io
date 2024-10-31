@@ -22,21 +22,22 @@
     /* shape-outside: ellipse(37% 47% at 50% 50%); */
 }
 figure::before{
-    content:'';
-    /* content:'I am SDE-1';
+    content: '';
+    /* content:'Kazim Syed';
     text-align:left;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    padding-left:2%; */
+    justify-content: flex-end; */
+    padding-left:2%; 
     position:absolute;
     width:100%;
     height:4rem;
-    background-color:var(--clr-dark2)
+    background-color:var(--clr-dark2);
     /* background-image: url('https://images.unsplash.com/photo-1446104838475-bc6508184f08?q=80&w=2952&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); */
     /* background-color:var(--clr-blue2); */
     /* background-image: url('https://images.unsplash.com/photo-1511207538754-e8555f2bc187?q=80&w=2412&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
     background-size: cover; */
+
 }
 
 figure{
@@ -44,6 +45,20 @@ figure{
     margin-bottom:0px!important;
 }
 
+
+
+#sidebar h4::after{
+    content:'';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    z-index:-1;
+    background-color:#343A40;
+    filter: blur(4px);
+    -webkit-filter: blur(12px);
+}
 
 figure #picture{
     position: relative;
@@ -92,7 +107,15 @@ figure #picture{
 .aboutme{
     /* background-color: var(--clr-blue2); */
     padding:10px 10px 1px 10px;
+    background-color: #343a40;
+    /* box-shadow: 5px 10px 10px var(--clr-dark2); */
 }
+
+/* table td:hover{
+    box-shadow: 0px 5px 10px 5px var(--clr-dark2);
+    padding-bottom:5px;
+    font-size:1.1rem;
+} */
 
 
 h3{
@@ -100,6 +123,7 @@ h3{
 }
 h4{
     font-size:1.1rem !important;
+    position: relative;
 }
 
 #oneline_info{
@@ -124,6 +148,11 @@ address{
     /* border:2px solid yellow;     */
     width:80%;
     margin-top:1rem;
+}
+
+.padding_off{
+    padding-left:1em;
+    padding-right: 1em;
 }
 
 .margin_off{
@@ -162,11 +191,16 @@ address{
     color:rgb(108, 117, 125);
     text-transform: uppercase;
     letter-spacing:1px;
-    background-color: #495057;
+    background-color: var(--clr-dark2);
     border-radius: 5%;
 }
+
 #sidebar table{
-    text-align: center;
+    text-align: right;
+}
+
+#oneline_info label,#oneline_info label{
+    font-size: 1.2rem;
 }
 
 #online_profiles,#coding_profiles,#project_links{
