@@ -100,31 +100,26 @@ $(document).ready(function(){
     
 
 })
+let handleScroll=(e) => {
+    //   const rect = header.getBoundingClientRect();
+        op=getTheClosest();
 
+        console.log(op);
+        if(op.element.innerText!=undefined){
+            // debugger;
+            nyp.innerText=op.element.innerText;
+    
+        }
+        else{
+            nyp.innerText="";
+        }
+    
+}
 
-window.addEventListener('scroll', (e) => {
-//   const rect = header.getBoundingClientRect();
-hr_lines=document.querySelectorAll('hr',e.clientY);
-
-console.log('heyyyy')
-    op=getTheClosest();
-    console.log(op);
-    if(op.element.innerText!=undefined){
-        debugger;
-        nyp.innerText=op.element.innerText;
-
-    }
-    else{
-        nyp.innerText="";
-    }
-//   if (rect.top < 0) {
-//     navbarTitle.textContent = header.textContent;
-//   } else {
-//     navbarTitle.textContent = '';
-//   }
-});
+window.addEventListener('scroll',handleScroll );
 /* end of document*/
 
+window.addEventListener('touchmove', handleScroll);
 
     
     
