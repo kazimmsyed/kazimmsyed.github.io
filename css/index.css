@@ -7,6 +7,7 @@
     margin:0;
 }
 
+
 #profile_pic{
     width:200px;
     height:200px;
@@ -150,6 +151,10 @@ address{
     margin-top:1rem;
 }
 
+.w_eighty{
+    width:calc(80% - 4%);
+}
+
 .padding_off{
     padding-left:1em;
     padding-right: 1em;
@@ -251,6 +256,30 @@ table:hover span.glow_dot{
 }
 
 
+
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* To wrap to the next line if needed */
+    /* gap: 20px; Adjust the gap between items as needed */
+}
+
+.skill-item {
+    /* padding: 10px; */
+    /* border:1px solid black; */
+    flex-basis: 100%; /* Adjust the width of each item */
+    display: grid;
+    grid-template-rows:auto;
+    grid-template-columns:1fr 2fr;
+    
+    
+}
+
+.skill-item p:nth-of-type(2){
+    text-align:left;
+}
+
+
 @media(max-width:800px){
     #oneline_info{
         flex-direction: column;
@@ -258,5 +287,14 @@ table:hover span.glow_dot{
     .box_design{
         flex-direction:column;
     }
+
+    .skill-item{
+        grid-template-rows: auto auto;
+        grid-template-columns:1fr;
+        margin-bottom:1rem;
+        /* box-shadow: 0 0 0.5em rgba(0,0,0,0.5); */
+
+    }
 }
+
 
