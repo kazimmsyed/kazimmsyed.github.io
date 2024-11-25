@@ -5,18 +5,34 @@ nav{
     position: fixed;
     z-index:2;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     font-size:2rem;
     backdrop-filter: blur(14px);
     align-items: baseline;
+    justify-content: flex-start;
+    box-sizing: content-box;
+}
+
+#hamburger{
+    padding:0px 5px 25px 0px;
+    z-index:2;
+    font-size: 2rem;
+    margin-left:10px;
+    margin-bottom: 20px;
+}
+
+.span_d{
+    flex-basis:calc(33vw - 30px - 35px + 20px) ;
+    min-width:1px;
+    flex-shrink:5;
 }
 
 #nyp{
-    margin-right:5%;
     /* color:var(--clr-dark2); */
     color:white;
     letter-spacing:5px;
     font-size:2rem;
+    flex-grow:1;
 }
 
 #nav_parent{
@@ -24,11 +40,14 @@ nav{
 }
 
 
-
-@media(max-width:400px){
+@media(max-width:500px){
     #nyp{
         font-size:1.1rem;
         transition:font-size 100ms ease-in;
     }
+    .span_d{
+        flex-basis:2%;
+    }
+
 }
 
