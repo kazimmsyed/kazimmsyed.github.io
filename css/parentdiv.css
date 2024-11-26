@@ -51,8 +51,13 @@ body{
     /* border:2px solid white; */
     box-sizing: border-box;
     z-index:1;
-
 }
+
+
+
+
+
+
 
 #main_content{
     color:white;
@@ -103,18 +108,25 @@ body{
     position: sticky;
     top:2rem;
     background-color: var(--clr-dark);
-     background-image: url('../images/water_pixels.jpg');
+    background-image: url('../images/water_pixels.jpg');
     background-size: cover; 
     background-position:20% 100%;
     /* border:2px solid yellow; */
     /* height:90vh; */
-    /* overflow: scroll; */
     /* experimental sidebar */
     display:flex;
     flex-direction: column;
     justify-content: flex-start;
-
+    max-height: calc(100vh - 50px);
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #333 #ccc;
 }
+
+
+
+
+
 
 #main_content hr{
     position: relative;
@@ -168,7 +180,7 @@ body{
     #sidebar{
         position: fixed;
         width:100vw;
-        /* height:90vh; */
+        height:100vh;
         background:transparent;
         backdrop-filter:blur(4px);
 

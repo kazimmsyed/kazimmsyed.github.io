@@ -59,7 +59,42 @@ figure{
     background-color:#343A40;
     filter: blur(4px);
     -webkit-filter: blur(12px);
+    overflow: hidden;
 }
+
+
+
+.slideDown2{
+    animation:dropTrans infinite;
+    animation-timing-function: ease-out;
+    animation-duration: 750ms;
+    animation-iteration-count: 1;
+    /* border:2px pink solid; */
+    animation-fill-mode: forwards;
+}
+
+ 
+
+
+.slideUp{
+    animation:dropSlide;
+    animation-timing-function: linear;
+    animation-duration: 2s;
+    animation-delay: 500ms;
+    animation-direction:reverse;
+}
+
+
+
+@keyframes dropTrans{
+    0%{
+        transform: translateY(-50vh);
+    }
+    100%{
+        transform:translateY(0);
+    }
+}
+
 
 figure #picture{
     position: relative;
@@ -279,6 +314,7 @@ table:hover span.glow_dot{
 @media(max-width:800px){
     #oneline_info{
         flex-direction: column;
+        margin-left:10vw;
     }
     .box_design{
         flex-direction:column;

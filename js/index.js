@@ -5,7 +5,7 @@ $(document).ready(function(){
     let parentDiv=document.getElementById('parentDiv');
     let flag=true;
     let sidebar=document.getElementById('sidebar');
-
+    let container=document.getElementById('container')
     //nyp
     nav=document.getElementById('nav_parent');
     
@@ -34,6 +34,7 @@ $(document).ready(function(){
             if(flag==false && parentDiv.classList.contains('grid_parent2')){
                 $('#sidebar').fadeIn(500);
                 flag=true;
+
             }
             changegrid();
         }
@@ -44,10 +45,12 @@ $(document).ready(function(){
     let hideandSeek=function(){
         if(flag==true){
             $('#sidebar').hide();
+            sidebar.classList.remove('slideDown2');
             flag=false
         }
         else if(flag==false){
             $('#sidebar').fadeIn(500);
+            sidebar.classList.add('slideDown2');
             flag=true;
         }
     }
@@ -87,16 +90,21 @@ $(document).ready(function(){
 
     /* Event Listeners*/
 
-    sidebar.addEventListener('click',(e)=>{
+    container.addEventListener('click',(e)=>{
         console.log('sidebar clicked');
         e.stopPropagation();
     });
     
-    parentDiv.addEventListener('click',(e)=>{
-    console.log('parentDiv clicked')
-    if((flag==true) && (window.innerWidth<=800) ){
+
+    minimizeNav=function(e){
+        console.log('parentDiv clicked')
+        if((flag==true) && (window.innerWidth<=800) ){
         ham_onclick();
-    };
+        }
+    }
+
+    parentDiv.addEventListener('click',minimizeNav);
+    // parentDiv.addEventListener('scroll',minimizeNav);
     
 
 })
@@ -123,7 +131,6 @@ window.addEventListener('touchmove', handleScroll);
 
     
     
-});
 
 
 let getTheClosest=function(y){
@@ -134,9 +141,6 @@ let getTheClosest=function(y){
     // console.log('----');
     op=[...hr_lines].reduce((acc,val)=>{
         val_box=val.getBoundingClientRect();
-
-
-
         offset=val_box.bottom;
         console.log(offset,val)
         if(offset<50 && offset>acc.offset){
