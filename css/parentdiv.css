@@ -107,7 +107,7 @@ body{
 #container{
     position: sticky;
     top:2rem;
-    background-color: var(--clr-dark);
+    /* background-color: var(--clr-dark)!important; */
     background-image: url('../images/water_pixels.jpg');
     background-size: cover; 
     background-position:20% 100%;
@@ -122,9 +122,16 @@ body{
     scrollbar-width: thin;
     scrollbar-color: #333 #ccc;
 }
-
-
-
+/* 
+#container::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url('../images/water_pixels2.jpg');
+    background-size: cover;
+} */
 
 
 

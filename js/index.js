@@ -112,7 +112,7 @@ let handleScroll=(e) => {
     //   const rect = header.getBoundingClientRect();
         op=getTheClosest();
 
-        console.log(op);
+        // console.log(op);
         if(op.element.innerText!=undefined){
             // debugger;
             nyp.innerText=op.element.innerText;
@@ -142,7 +142,7 @@ let getTheClosest=function(y){
     op=[...hr_lines].reduce((acc,val)=>{
         val_box=val.getBoundingClientRect();
         offset=val_box.bottom;
-        console.log(offset,val)
+        // console.log(offset,val)
         if(offset<50 && offset>acc.offset){
             return {"offset":offset,"element":val}
         }
@@ -154,4 +154,41 @@ let getTheClosest=function(y){
     return op;
 }
 
+/* Intersection Observer */
 
+let viewSlide=function(args){
+    for(let e of args){
+        console.log(e);
+        e.target.classList.toggle('card_slide',e.isIntersecting);
+        if(e.isIntersecting){
+            observer.unobserve(e.target);
+        }
+    }
+}
+
+let observer=new IntersectionObserver(viewSlide,{threshold:0.2});
+cards=document.querySelectorAll('.mycard');
+
+
+let applyOnCards=(e)=>{
+    for(let e of cards){
+        observer.observe(e);
+    }
+}
+
+applyOnCards(cards);
+
+/* Lazy Loading */
+
+// pic=document.querySelector('#picture::after');
+
+// loaded=function(){
+//     pic.classList.add('loaded');
+// }
+
+// if(pic.complete){
+//     loaded()
+// }
+// else{
+//     pic.addEventListener("load",loaded);
+// }

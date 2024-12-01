@@ -1,0 +1,33 @@
+
+.mycard{
+    opacity: 0;
+    transform: translateX(3%);
+}
+
+.card_slide{
+    animation:ml;
+    animation-duration: 1.2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    /* transform: scale(0); */
+}
+
+
+
+@keyframes ml{
+    0%{
+        /* transform: translateX(-10%); */
+        display: block;
+        opacity: 0.4;
+        
+        /* transform: scale(0.5); */
+    }
+    50%{
+        opacity: 0.8;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+        /* transform: scale(1); */
+    }
+}

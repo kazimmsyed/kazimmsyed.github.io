@@ -1,6 +1,7 @@
 @import url("parentdiv.css");
 @import url("navbar.css");
 @import url("maincontent.css");
+@import url("scalable.css");
 
 :root,html,body{
     box-sizing: border-box;
@@ -117,15 +118,42 @@ figure #picture{
 }
 
 
-/* figure::before{
+
+/* 
+#picture::before{
+    content:'';
     position:absolute;
-    z-index:10;
+    display:inline-block;
+    top:0;
+    left:0;
+    background-image: url("../images/myimage2.jpg");
+    background-position: 35% 30%;
+    background-size: cover;
+    clip-path: circle(40.4% at 50% 50%);
+    z-index:2;
     width:100%;
-    bottom:100%;
     height:100%;
-    border:2px solid pink;
+    animation: bufferImage infinite;
+    animation-duration: 500ms;
+}
+
+@keyframes bufferImage{
+
+    0% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0.3;
+    }
+    
     
 } */
+
+
+
 #picture::after{
     content:'';
     position:absolute;
@@ -139,7 +167,15 @@ figure #picture{
     z-index:3;
     width:100%;
     height:100%;
+    /* opacity: 0; */
 }
+/* 
+.loaded{
+    opacity: 1;
+} */
+
+
+
 .aboutme{
     /* background-color: var(--clr-blue2); */
     padding:10px 10px 1px 10px;
@@ -253,23 +289,41 @@ address{
 
 
 .glow_dot{
-    width:5px;
-    height:5px;
+    width:6px;
+    height:6px;
     /* background-color: rgb(119, 239, 119); */
     border-radius: 100%;
     display: inline-block;
-
+    position: relative;
+    right:20%;
 }
 
+/* .glow_dot::before{
+    content:"";
+    position: absolute;
+    width:200%;
+    height:200%;
+    border-radius: 100%;
+    z-index:-1;
+    background-color: white;
+    inset: 0;
+    filter: blur(8px);
+    -webkit-filter: blur(22px);
+
+} */
 
 #skills table{
     width:80%;
 }
 
-
+hr{
+    margin-bottom: 2rem!important;
+}
 .green_spark{
     background-color: rgb(20, 147, 81);
-
+    animation: glowShine infinite;
+    animation-duration: 1000ms;
+    animation-fill-mode: forwards;
 }
 
 .red_spark{
@@ -277,10 +331,30 @@ address{
 }   
 
 
+@keyframes glowShine{
+    0%{
+        background-color: white;
+    }
+    50%{
+        transition:background-color 250ms ease-in;
+        background-color: rgb(100, 234, 109);
+
+    }
+    100%{
+        background-color: rgb(100, 234, 109);
+        transition:background-color 250ms ease-in
+    }
+
+
+}
+
+
+
+/* 
 table:hover span.glow_dot{
     width:6px;
     height:6px;
-}
+} */
 
 #container div{
     margin-bottom:15px;
